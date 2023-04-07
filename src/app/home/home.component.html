@@ -1,0 +1,9 @@
+<div class="topnav">
+    <a [routerLink]="['/login']" routerLinkActive="active">Login</a><br>
+    <a [routerLink]="['/signup']" routerLinkActive="active">Signup</a>
+    <a [routerLink]="['/users']" routerLinkActive="active">Users</a>
+    <a *ngIf="loggedin" [routerLink]="['/profile']" routerLinkActive="active">Profile</a>
+    <a *ngIf="loggedin" (click)="onLogout()">Logout</a>
+</div>
+
+<router-outlet></router-outlet>
