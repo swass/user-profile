@@ -1,0 +1,29 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{name}} 
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <hr>
+    <div class="right_menu">
+      <button mat-icon-button aria-label="menu" (click) = "showProfileMenu()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <div *ngIf="showProfileOptions">
+        <button class="fab_btn" (click)="deleteUser()" mat-mini-fab color="primary" aria-label="Delete Profile">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <!-- <br>
+        <button mat-mini-fab color="primary" (click)="editUser()" aria-label="Edit Profile">
+          <mat-icon>edit</mat-icon>
+        </button> -->
+      </div>  
+    </div>
+    <p>Email: {{email}}</p>
+    <p>Phone Number: {{phoneNumber}}</p>
+    <p>Date of Birth: {{dob}}</p>
+    <p>Address: {{address1}}, {{city}}</p>
+    <p>{{state}}</p>
+  </mat-expansion-panel>
+  <hr>
+  

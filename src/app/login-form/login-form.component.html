@@ -1,0 +1,48 @@
+<div class="container">
+    <h4>Login</h4>
+    <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmit(loginForm)" >
+        <div>
+            <label>Email Id</label>
+            <input 
+            type="email" 
+            #emailId="ngModel"
+            name="email"
+            [(ngModel)]="emailIdValue"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            [class.invalidInput]="emailId.invalid && emailId.touched"
+            required>
+            <div *ngIf ="emailId.invalid && emailId.touched">
+                <small>Error</small>
+            </div>
+        </div>
+        <div>
+            <label>Password</label>
+            <input 
+                type="password"
+                #password = "ngModel"
+                name="password" 
+                [(ngModel)]="passwordValue"
+                [class.invalidInput]="password.invalid && password.touched"
+                required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                title="Password min length 8">
+            <div *ngIf ="password.invalid && password.touched">
+                <small>Must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter,
+                     and one number</small>
+            </div>
+        </div>
+
+        <div>
+            <button 
+            type="submit"
+            name="submit"            
+            >Login</button>
+        </div>
+    </form>
+</div>
+<div *ngIf = "spinner" class="spinner">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+<div *ngIf="errorMessage" class="error" (click)="closeError()">
+    <p>{{ errorMessage }}</p>
+</div>

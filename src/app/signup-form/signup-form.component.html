@@ -1,0 +1,49 @@
+<div class="container">
+    <h4>Register</h4>
+    <form #userDetails [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+        <div>
+            <input formControlName="fullName" type="text" name="fullName" placeholder="*Enter Full Name" />
+            <label class="errorMessage" *ngIf="nameInvalid ||
+            (signupForm.controls['fullName'].invalid && signupForm.controls['fullName'].touched)">
+                Please enter a valid name of min length 6</label>
+        </div>
+        <div>
+            <input formControlName="emailId" type="email" name="email" placeholder="*Enter Email Id"/>
+            <label class="errorMessage" *ngIf="emailInvalid ||
+            (signupForm.controls['emailId'].invalid && signupForm.controls['emailId'].touched)" >
+                Please enter a valid email id</label> 
+        </div>
+        <div>
+            <input formControlName="password" type="password" name="password" placeholder="*Enter Password" #passwordField />
+            <label class="errorMessage" *ngIf="(passwordInvalid) || 
+            (signupForm.controls['password'].invalid && signupForm.controls['password'].touched)">
+            Password must be 8 chatrecter,1 uppercase, 1lowercase, 1 number</label>
+        </div>
+        <div>
+            <input formControlName="confirmPassword" type="password" name="confirmPassword" placeholder="*Confirm Password" />
+            <label class="errorMessage" *ngIf="confirmPasswordInvalid ||
+            (signupForm.controls['confirmPassword'].invalid && signupForm.controls['confirmPassword'].touched)">
+                Please confirm your correct password</label>
+            <label class="errorMessage" *ngIf="(signupForm.controls['confirmPassword'].value != signupForm.controls['password'].value)
+                && (signupForm.controls['confirmPassword'].touched) ">Password not matched</label>
+        </div>
+        <div>
+            <input formControlName="phoneNumber" type="phone" name="phone" placeholder="*Enter Phone Number" tooltip="Minimum eight characters, at least one letter and one number"/>
+            <label class="errorMessage" *ngIf="phoneInvalid ||
+            (signupForm.controls['phoneNumber'].invalid && signupForm.controls['phoneNumber'].touched)">
+                Please enter a valid phone number</label>
+        </div>
+        <input formControlName="dob" type="date" name="dob" placeholder="Enter Date of Birth" />
+        
+        <div formGroupName="address">
+            <input formControlName="address1" type="text" name="address1" placeholder="House Number, Street, Lane.." > 
+            <input formControlName="city" type="text" name="city" placeholder="Enter City"/>
+            <select formControlName="state" type="select" name="state">
+                <option value=null selected disabled>Select State</option>
+                <option *ngFor="let s of states" value="{{s}}">{{s}}</option>
+            </select>
+            <input formControlName="pincode" type="number" name="pincode" placeholder="Postal Code" />
+        </div>
+        <button type="submit">Signup</button>
+    </form>
+</div>

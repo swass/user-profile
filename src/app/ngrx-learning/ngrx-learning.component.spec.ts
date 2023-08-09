@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { NgrxLearningComponent } from './ngrx-learning.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('NgrxLearningComponent', () => {
+  let component: NgrxLearningComponent;
+  let fixture: ComponentFixture<NgrxLearningComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ NgrxLearningComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(NgrxLearningComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

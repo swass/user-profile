@@ -1,0 +1,13 @@
+<p>ngrx-learning works!</p>
+<button (click) = "showNotes = !showNotes">{{ showNotes ? 'Show Notes' : 'Hide Notes' }}</button>
+<div *ngIf = "showNotes" class="popup_card">
+    <ol>
+        <li>install ngrx store in app : ng add @ngrx/store</li>
+        <li>package.json and app module will be updated, store will be imported in app module</li>
+        <li>define initial state, and reducers</li>
+        <li>define actions to be dispatched from component</li>
+        <li>inject Store object in component constructor</li>
+        <li>using store object, subscribe to the app states or dispach any action from comp.</li>
+    </ol>
+
+</div>

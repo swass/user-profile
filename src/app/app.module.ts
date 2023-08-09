@@ -17,6 +17,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button';
+import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
+import { NgrxLearningComponent } from './ngrx-learning/ngrx-learning.component';
+import { StoreModule } from '@ngrx/store';
 
 
 const routes: Routes = [
@@ -24,7 +27,9 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'signup', component: SignupFormComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'users', component: UsersComponent}
+  { path: 'users', component: UsersComponent},
+  { path: 'rxjs-learning', component: RxjsLearningComponent},
+  { path: 'ngrx-learning', component: NgrxLearningComponent}
 ];
 
 @NgModule({
@@ -34,7 +39,9 @@ const routes: Routes = [
     SignupFormComponent,
     HomeComponent,
     ProfileComponent,
-    UsersComponent
+    UsersComponent,
+    RxjsLearningComponent,
+    NgrxLearningComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +53,12 @@ const routes: Routes = [
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [fakeBackendProvider],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

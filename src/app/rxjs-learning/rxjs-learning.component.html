@@ -1,0 +1,8 @@
+<p>Few outputs are in console so please check console</p>
+<p *ngIf="agentData">{{ agentData}}</p>
+<hr>
+<div>
+    <form [formGroup]="searchForm">
+        <input type="text" formControlName="searchValue" (keyup)="ReadSearchValue()" placeholder="Enter text">
+    </form>
+</div>

@@ -22,13 +22,14 @@ export class RegisterService {
             }));
   }
   onUserSignup(user: UserProfile) {
-    // this.route.navigate(['/profile']);
     return this.http.post(`http://localhost:4000/users/register`, user)
       .pipe(map(user => {
                 localStorage.setItem('user', JSON.stringify(user));
                 return user;
             }));
   }
+
+  
 
   getAllUsers() {
     return this.http.get<any[]>(`http://localhost:4000/users`);

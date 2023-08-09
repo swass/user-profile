@@ -4,6 +4,8 @@
     <a [routerLink]="['/users']" routerLinkActive="active">Users</a>
     <a *ngIf="loggedin" [routerLink]="['/profile']" routerLinkActive="active">Profile</a>
     <a *ngIf="loggedin" (click)="onLogout()">Logout</a>
+    <a [routerLink]="['/rxjs-learning']" routerLinkActive="active">RxJs Learning</a>
+    <a [routerLink]="['/ngrx-learning']" routerLinkActive="active">ngRx Learning</a>
 </div>
 
 <router-outlet></router-outlet>

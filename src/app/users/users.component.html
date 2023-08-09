@@ -1,0 +1,17 @@
+<table>
+    <div class="header_row">
+    <tr>
+    <td>Name</td>
+    <td>Email Id</td>
+    <td>Phone number</td>
+    </tr>
+    </div>
+
+    
+        <tr *ngFor ="let user of users" class="data_row">
+        <td>{{ user.name | uppercase}}</td>
+        <td #email>{{ user.email }}</td>
+        <td>{{ user.phoneNumber }}</td>
+        </tr>
+    
+</table>
